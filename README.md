@@ -1,43 +1,44 @@
-# Cryptocurrency
+# Student Performance Factors
 
-Projeto front-end criado com **Vite** e **Bootstrap**
+Front-end project built with **Vite** and **Bootstrap**
 
-- `index.html` → página principal.  
-- `pages/` → páginas secundárias.  
-- `js/main.js` → arquivo JavaScript principal.  
-- `scss/styles.scss` → estilos principais do projeto.  
-- `vite.config.js` → configuração do Vite, incluindo múltiplas páginas.
+- `index.html` → main page.  
+- `pages/` → secondary pages.  
+- `js/main.js` → main JavaScript file.  
+- `scss/styles.scss` → main project styles.  
+- `vite.config.js` → Vite configuration, including multiple pages.
 
-## Tecnologias usadas
+## Technologies Used
 
 - [Vite](https://vitejs.dev/)  
 - [Bootstrap](https://getbootstrap.com/)  
 - JavaScript  
 - SCSS  
 
-## Instalação e execução
+## Installation and Execution
 
-1. Clonar o projeto:
+1. Clone the project:
 ```bash
-git clone <repositório-url>
-cd cryptocurrency
+git clone <repository-url>
+cd Student-Performance-Factors
 ```
-## Instalar dependências:
+## Install dependencies:
 ```
 npm install
 ```
-## Executar em modo de desenvolvimento:
+## Run in development mode:
 ```
 npm run dev
 ```
 
-## Acesse para ver o projeto:
+## Access the project at:
 ```
 http://localhost:5173/
 ```
 
-## Build para produção:
+## Build for production:
 ```
 npm run build
 ```
-Os arquivos otimizados serão gerados em dist/
+
+Optimized files will be generated in the dist/
