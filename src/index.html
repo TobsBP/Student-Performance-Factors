@@ -55,6 +55,35 @@
         </div>
       </div>
 
+        <div>
+    <canvas id="myChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+
       <!-- Main Factors -->
       <div class="row mb-5">
         <div class="col-12">
@@ -112,9 +141,21 @@
           <div class="card h-100 border-primary shadow-sm">
             <div class="card-body">
               <div class="text-primary mb-3">
-                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 64 64" role="img" aria-label="Ícone de livro azul">
+                  <!-- Capa -->
+                  <rect x="8" y="10" width="40" height="44" rx="2.5" ry="2.5" fill="#1976D2"/>
+                  <!-- Lombada (sombra) -->
+                  <path d="M48 10v44a2.5 2.5 0 0 1-2.5 2.5H46V10h2z" fill="#0D47A1" opacity="0.9"/>
+                  <!-- Páginas (linhas) -->
+                  <g fill="#BBDEFB">
+                    <rect x="12" y="16" width="20" height="2" rx="1"/>
+                    <rect x="12" y="22" width="22" height="2" rx="1"/>
+                    <rect x="12" y="28" width="26" height="2" rx="1"/>
+                    <rect x="12" y="34" width="26" height="2" rx="1"/>
+                    <rect x="12" y="40" width="26" height="2" rx="1"/>
+                  </g>
                 </svg>
+
               </div>
               <h5 class="card-title">Tutoring Sessions</h5>
               <p class="card-text text-muted">Extra academic support and personalized learning</p>
