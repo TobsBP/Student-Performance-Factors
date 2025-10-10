@@ -3,13 +3,305 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap w/ Vite</title>
-    <script type="module" src="./js/main.js"></script>
+    <title>Student Performance Factors - Bootstrap w/ Vite</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="container py-4 px-3 mx-auto">
-      <h1>Hello, Bootstrap and Vite!</h1>
-      <button class="btn btn-primary">Primary button</button>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="../index.html">SPF</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/team.html">Team</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/about.html">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+      <div class="container py-5">
+        <div class="row align-items-center text-white">
+          <div class="col-lg-8 mx-auto text-center py-4">
+            <h1 class="display-4 fw-bold mb-3">Student Performance Factors</h1>
+            <p class="lead mb-4">
+              Understanding the key elements that influence academic success
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Introduction -->
+    <div class="container py-5">
+      <div class="row mb-5">
+        <div class="col-lg-8 mx-auto">
+          <div class="alert alert-info border-0 shadow-sm">
+            <h5 class="alert-heading mb-3">Dataset Overview</h5>
+            <p class="mb-0">This analysis explores various factors affecting student academic performance, including study habits, sleep patterns, attendance, and socioeconomic conditions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Factors -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="text-center mb-5">Key Performance Factors</h2>
+        </div>
+      </div>
+
+      <!-- Academic Factors -->
+      <div class="row g-4 mb-5">
+        <div class="col-12">
+          <h3 class="mb-4 text-primary">Academic Factors</h3>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body">
+              <div class="text-primary mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.275a.5.5 0 0 0 .025-.917l-7.5-3.5Z"/>
+                  <path d="M4.176 9.032a.5.5 0 0 0-.656.327l-.5 1.7a.5.5 0 0 0 .294.605l4.5 1.8a.5.5 0 0 0 .372 0l4.5-1.8a.5.5 0 0 0 .294-.605l-.5-1.7a.5.5 0 0 0-.656-.327L8 10.466 4.176 9.032Z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Study Hours</h5>
+              <p class="card-text text-muted">Daily time dedicated to studying and homework completion</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body">
+              <div class="text-primary mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm.5-5.5a.5.5 0 0 1-1 0v-3.362l-1.429 1.429a.5.5 0 1 1-.707-.708l2-2a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 7.138V10.5z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Attendance Rate</h5>
+              <p class="card-text text-muted">Percentage of classes attended throughout the semester</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body">
+              <div class="text-primary mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M5 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm4-2.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zM9 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4A.5.5 0 0 1 9 8zm1 2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5z"/>
+                  <path d="M2 2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H2zm13 2v5H1V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1zm-1 9H2a1 1 0 0 1-1-1v-1h14v1a1 1 0 0 1-1 1z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Previous Scores</h5>
+              <p class="card-text text-muted">Academic performance in prior examinations</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-primary shadow-sm">
+            <div class="card-body">
+              <div class="text-primary mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Tutoring Sessions</h5>
+              <p class="card-text text-muted">Extra academic support and personalized learning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lifestyle Factors -->
+      <div class="row g-4 mb-5">
+        <div class="col-12">
+          <h3 class="mb-4 text-success">Lifestyle & Health Factors</h3>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-success shadow-sm">
+            <div class="card-body">
+              <div class="text-success mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                  <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Sleep Hours</h5>
+              <p class="card-text text-muted">Average daily sleep duration and quality</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-success shadow-sm">
+            <div class="card-body">
+              <div class="text-success mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M6 .5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1H9v1.07a7.001 7.001 0 0 1 3.274 12.474l.601.602a.5.5 0 0 1-.707.708l-.746-.746A6.97 6.97 0 0 1 8 16a6.97 6.97 0 0 1-3.422-.892l-.746.746a.5.5 0 0 1-.707-.708l.602-.602A7.001 7.001 0 0 1 7 2.07V1h-.5A.5.5 0 0 1 6 .5zm2.5 5a.5.5 0 0 0-1 0v3.362l-1.429 1.429a.5.5 0 1 0 .708.708l1.5-1.5A.5.5 0 0 0 8.5 9V5.5zM8 3.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Physical Activity</h5>
+              <p class="card-text text-muted">Regular exercise and sports participation</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-success shadow-sm">
+            <div class="card-body">
+              <div class="text-success mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Extracurricular</h5>
+              <p class="card-text text-muted">Involvement in clubs, sports, and activities</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 border-success shadow-sm">
+            <div class="card-body">
+              <div class="text-success mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.708 2.825L15 11.105V5.383zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741zM1 11.105l4.708-2.897L1 5.383v5.722z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Motivation Level</h5>
+              <p class="card-text text-muted">Student engagement and learning interest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Socioeconomic Factors -->
+      <div class="row g-4 mb-5">
+        <div class="col-12">
+          <h3 class="mb-4 text-warning">Socioeconomic Factors</h3>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-warning shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Parental Education</h5>
+              <p class="card-text text-muted">Educational background of parents and guardians</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-warning shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5ZM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5 5 5Z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">Family Income</h5>
+              <p class="card-text text-muted">Household financial resources and stability</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-warning shadow-sm">
+            <div class="card-body">
+              <div class="text-warning mb-3">
+                <svg width="40" height="40" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M9.828 3h3.982a2 2 0 0 1 1.992 2.181l-.637 7A2 2 0 0 1 13.174 14H2.826a2 2 0 0 1-1.991-1.819l-.637-7a1.99 1.99 0 0 1 .342-1.31L.5 3a2 2 0 0 1 2-2h3.672a2 2 0 0 1 1.414.586l.828.828A2 2 0 0 0 9.828 3zm-8.322.12C1.72 3.042 1.95 3 2.19 3h5.396l-.707-.707A1 1 0 0 0 6.172 2H2.5a1 1 0 0 0-1 .981l.006.139z"/>
+                </svg>
+              </div>
+              <h5 class="card-title">School Resources</h5>
+              <p class="card-text text-muted">Access to learning materials and technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Statistics Section -->
+      <div class="row mb-5">
+        <div class="col-12">
+          <h2 class="text-center mb-5">Performance Insights</h2>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center p-4 bg-light rounded shadow-sm">
+            <h3 class="display-4 text-primary fw-bold">15+</h3>
+            <p class="text-muted mb-0">Variables Analyzed</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center p-4 bg-light rounded shadow-sm">
+            <h3 class="display-4 text-success fw-bold">85%</h3>
+            <p class="text-muted mb-0">Prediction Accuracy</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center p-4 bg-light rounded shadow-sm">
+            <h3 class="display-4 text-warning fw-bold">10K+</h3>
+            <p class="text-muted mb-0">Student Records</p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="text-center p-4 bg-light rounded shadow-sm">
+            <h3 class="display-4 text-info fw-bold">7</h3>
+            <p class="text-muted mb-0">Key Factors</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conclusion -->
+      <div class="row">
+        <div class="col-lg-10 mx-auto">
+          <div class="card border-0 shadow-lg">
+            <div class="card-body p-5">
+              <h3 class="mb-4">Understanding the Impact</h3>
+              <p class="text-muted mb-3">
+                Student performance is influenced by a complex interplay of academic, lifestyle, and socioeconomic factors. Our analysis reveals that successful students typically demonstrate:
+              </p>
+              <ul class="text-muted">
+                <li>Consistent study habits with adequate daily study hours</li>
+                <li>High attendance rates and active class participation</li>
+                <li>Healthy sleep patterns (7-9 hours per night)</li>
+                <li>Balanced lifestyle including physical activity</li>
+                <li>Strong parental support and engagement</li>
+                <li>Access to adequate learning resources</li>
+                <li>High motivation and positive attitude toward learning</li>
+              </ul>
+              <p class="text-muted mb-0">
+                By understanding these factors, educators and policymakers can develop targeted interventions to support student success and address performance gaps.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2025 EduAnalytics. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+            <a href="#" class="text-white text-decoration-none">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
