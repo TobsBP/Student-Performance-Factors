@@ -24,10 +24,7 @@ print(private,"\n")
 print("\nMédia das notas por tipo de escola:\n")
 print(medias)
 
-# Grafico
-import matplotlib.pyplot as plt
-
-# gráfico de barras
+# Grafico de barras
 plt.figure(figsize=(6, 4))
 medias.plot(kind="bar", color=["skyblue", "salmon"])
 
