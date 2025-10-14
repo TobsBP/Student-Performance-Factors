@@ -44,11 +44,11 @@ npm run build
 Optimized files will be generated in the dist/
 
 ## 10 Questions Answered About the Dataset
- 1.How does family income influence academic performance and access to educational resources?
+ 1. How does family income influence academic performance and access to educational resources?
  
- 2.Do parental involvement and parental educational level reduce achievement inequalities among students?
+ 2. Do parental involvement and parental educational level reduce achievement inequalities among students?
  
- 3.Are there performance disparities between students in public and private schools?
+ 3. Are there performance disparities between students in public and private schools?
  
  4. Do students without internet access perform worse, and does this reflect a digital divide?
     
