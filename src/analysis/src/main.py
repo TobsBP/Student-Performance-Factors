@@ -45,23 +45,23 @@ plt.show()
 
 # ================================= 5 Perguntas secundarias =================================
 # 10 Perguntas para Análise do Dataset:
-#     Qual a relação entre horas de estudo e desempenho no exame?
+#     6.Qual a relação entre horas de estudo e desempenho no exame?
 #         Existe correlação positiva entre horas estudadas e notas?
 
-#     Como a frequência escolar impacta o desempenho acadêmico?
+#     7.Como a frequência escolar impacta o desempenho acadêmico?
 #         Estudantes com maior frequência têm notas significativamente melhores?
 
-#     Qual gênero apresenta melhor desempenho médio nas avaliações?
+#     8.Qual gênero apresenta melhor desempenho médio nas avaliações?
 #         Há diferença significativa entre homens e mulheres?
 
-#     Qual o perfil de sono dos melhores estudantes?
+#     9.Qual o perfil de sono dos melhores estudantes?
 #         Há um número ideal de horas de sono associado a melhores notas?
 
-#     Qual o nível de motivação mais comum entre os estudantes e como isso afeta suas notas?
+#     10.Qual o nível de motivação mais comum entre os estudantes e como isso afeta suas notas?
 #         A motivação influencia diretamente nos resultados?
 
-#     A participação em atividades extracurriculares melhora o desempenho acadêmico?
+#     11.A participação em atividades extracurriculares melhora o desempenho acadêmico?
 #         Estudantes que praticam atividades extras têm melhor rendimento?
 
-#     Dentre todos os fatores analisados, qual tem a maior correlação com o sucesso no exame?
+#     12.Dentre todos os fatores analisados, qual tem a maior correlação com o sucesso no exame?
 #         Qual é o fator mais determinante para o bom desempenho?
