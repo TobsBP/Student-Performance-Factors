@@ -27,6 +27,11 @@ ds = pd.read_csv("../../assets/student-por.csv", sep=",")
 
 # 7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?
 # infos que podem ajudar: activities=extra-curricular activities (binary: yes or no)
+# Agrupar por 'activities' e calcular a média de G3
+media_por_grupo = ds.groupby('activities')['G3'].mean()
+print("\nAlunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?")
+print("Medias das notas por no/yes:\n", media_por_grupo, "\nConcluimos que alunos que participam de atividades extracurriculares "
+                                                         "apresentam melhor desempenho escolar\n")
 
 # 8. Há uma correlação entre o consumo de álcool (Dalc, Walc) e as notas finais?
 # infos que podem ajudar: Dalc=workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
