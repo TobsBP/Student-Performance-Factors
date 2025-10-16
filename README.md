@@ -44,20 +44,22 @@ npm run build
 Optimized files will be generated in the dist/
 
 ## 10 Questions Answered About the Dataset
- 1. How does family income influence academic performance and access to educational resources?
- 
- 2. Do parental involvement and parental educational level reduce achievement inequalities among students?
- 
- 3. Are there performance disparities between students in public and private schools?
- 
- 4. Do students without internet access perform worse, and does this reflect a digital divide?
+ 1.	Como o nível de escolaridade dos pais influencia o desempenho acadêmico dos estudantes?
     
- 6. Does distance from school negatively impact performance and attendance, especially in rural areas?
+	2.	Há relação entre o tempo de estudo semanal e as notas finais (G3)?
     
- 7. What is the relationship between study hours and exam performance?
-    
- 8. How does school attendance impact academic performance?
-      
- 9. Which gender performs better on average on exams?
-     
- 10. What is the sleep pattern of top students?
+	3.	O apoio familiar (famsup) afeta positivamente o rendimento escolar?
+	
+ 4.	O acesso à internet em casa está associado a melhores resultados escolares?
+	
+ 5.	A distância entre casa e escola (traveltime) interfere no desempenho do aluno?
+	
+ 6.	O tamanho da família (famsize) impacta o tempo dedicado aos estudos?
+	
+ 7.	Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?
+	
+ 8.	Há uma correlação entre o consumo de álcool (Dalc, Walc) e as notas finais?
+	
+ 9.	O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?
+	
+ 10.	Alunos que desejam cursar o ensino superior (higher) obtêm notas mais altas por maior motivação?
