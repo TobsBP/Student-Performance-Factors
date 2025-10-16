@@ -46,9 +46,9 @@ Optimized files will be generated in the dist/
 ## 10 Questions Answered About the Dataset
  1.	Como o nível de escolaridade dos pais influencia o desempenho acadêmico dos estudantes?
     
-	2.	Há relação entre o tempo de estudo semanal e as notas finais (G3)?
+ 2.	Há relação entre o tempo de estudo semanal e as notas finais (G3)?
     
-	3.	O apoio familiar (famsup) afeta positivamente o rendimento escolar?
+ 3.	O apoio familiar (famsup) afeta positivamente o rendimento escolar?
 	
  4.	O acesso à internet em casa está associado a melhores resultados escolares?
 	
@@ -62,4 +62,4 @@ Optimized files will be generated in the dist/
 	
  9.	O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?
 	
- 10.	Alunos que desejam cursar o ensino superior (higher) obtêm notas mais altas por maior motivação?
+ 10.Alunos que desejam cursar o ensino superior (higher) obtêm notas mais altas por maior motivação?
