@@ -28,13 +28,16 @@ ds = pd.read_csv("../../assets/student-por.csv", sep=",")
 # 7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?
 # infos que podem ajudar: activities=extra-curricular activities (binary: yes or no)
 # Agrupar por 'activities' e calcular a média de G3
-print("\nAlunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?")
+print("\n7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?")
+
 media_por_grupo = ds.groupby('activities')['G3'].mean()
 mediaYesActivities = media_por_grupo['yes']
 mediaNoActivities = media_por_grupo['no']
+
 print("Médias das notas finais (G3) por grupo: ")
 print("Média das que fizeram atividades: ",mediaYesActivities)
 print("Média das que não fizeram atividades: ",mediaNoActivities)
+
 if mediaYesActivities > mediaNoActivities:
     print("Conclusão: Alunos que participam de atividades extracurriculares apresentam melhor desempenho escolar.")
 elif mediaYesActivities < mediaNoActivities:
@@ -48,6 +51,34 @@ else:
 
 # 9. O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?
 # infos que podem ajudar: pstatus=parent's cohabitation status (binary: 'T' - living together or 'A' - apart)
+print("\n9. O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?")
+
+mediaStatus = ds.groupby('Pstatus')[['studytime', 'G3']].mean()
+mediaStatusT = mediaStatus.loc['T']
+mediaStatusA = mediaStatus.loc['A']
+
+print("Médias da motivação de estudo(tempo de estudo) e notas finais: ")
+print("Média das que tem pais juntos: ")
+print("Média do tempo de estudo: ", mediaStatusT['studytime'])
+print("Média da nota final: ", mediaStatusT['G3'])
+print("Média das que não tem pais juntos: ")
+print("Média do tempo de estudo: ", mediaStatusA['studytime'])
+print("Média da nota final: ", mediaStatusA['G3'])
+
+if mediaStatusT['studytime'] > mediaStatusA['studytime']:
+    print("\nConclusão da motivação: Alunos com pais vivendo juntos apresentam maior tempo de estudo (mais motivação).")
+elif mediaStatusT['studytime'] < mediaStatusA['studytime']:
+    print("\nConclusão da motivação: Alunos com pais separados apresentam maior tempo de estudo (mais motivação).")
+else:
+    print("\nConclusão da motivação: Não há diferença significativa no tempo de estudo entre os grupos.")
+
+if mediaStatusT['G3'] > mediaStatusA['G3']:
+    print("Conclusão do desempenho: Alunos com pais vivendo juntos apresentam melhor desempenho escolar (G3 maior).")
+elif mediaStatusT['G3'] < mediaStatusA['G3']:
+    print("Conclusão do desempenho: Alunos com pais separados apresentam melhor desempenho escolar (G3 maior).")
+else:
+    print("Conclusão do desempenho: Não há diferença significativa nas notas finais entre os grupos.")
+
 
 # 10. Alunos que desejam cursar o ensino superior (higher) obtêm notas mais altas por maior motivação?
 # infos que podem ajudar:
