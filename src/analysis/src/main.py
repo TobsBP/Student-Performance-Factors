@@ -24,6 +24,22 @@ ds = pd.read_csv("../../assets/student-por.csv", sep=",")
 # ================================= 5 Perguntas secundarias =================================
 # 6. O tamanho da família (famsize) impacta o tempo dedicado aos estudos?
 # infos que podem ajudar: famsize=family size (binary: 'LE3' - less or equal to 3 or 'GT3' - greater than 3)
+print("\n6. O tamanho da família (famsize) impacta o tempo dedicado aos estudos?")
+
+mediaFamsize = ds.groupby('famsize')['studytime'].mean()
+mediaFamsizeLE3 = mediaFamsize.loc['LE3']
+mediaFamsizeGT3 = mediaFamsize.loc['GT3']
+
+print("Médias do tempo de estudo por grupo: ")
+print("Média das Famílias pequenas: ",mediaFamsizeLE3)
+print("Média das Famílias grandes: ",mediaFamsizeGT3)
+
+if mediaFamsizeLE3 > mediaFamsizeGT3:
+    print("\nConclusão: Alunos de famílias menores tendem a dedicar mais tempo aos estudos.")
+elif mediaFamsizeLE3 < mediaFamsizeGT3:
+    print("\nConclusão: Alunos de famílias maiores tendem a dedicar mais tempo aos estudos.")
+else:
+    print("\nConclusão: O tamanho da família não parece impactar o tempo dedicado aos estudos.")
 
 # 7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?
 # infos que podem ajudar: activities=extra-curricular activities (binary: yes or no)
