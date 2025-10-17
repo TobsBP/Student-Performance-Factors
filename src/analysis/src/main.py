@@ -2,99 +2,87 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Carregar o dataset
-ds = pd.read_csv("../../assets/student-por.csv", sep=",")
+# ================================= Carregar o dataset =================================
+ds = pd.read_csv("/home/tobias/Documentos/Student-Performance-Factors/src/assets/student-por.csv", sep=",")
 
-# ================================= 5 Perguntas principais =================================
-# 1. Como o nível de escolaridade dos pais influencia o desempenho acadêmico dos estudantes?
-# infos que podem ajudar:
+# ================================= Criar figura única =================================
+fig, axes = plt.subplots(2, 5, figsize=(22, 8))
+axes = axes.ravel()
 
-# 2. Há relação entre o tempo de estudo semanal e as notas finais (G3)?
-# infos que podem ajudar: final grade (numeric: from 0 to 20, output target)
+# ------------------------------------------ 1 -----------------------------------------------------------
+ds.groupby(['Medu', 'Fedu'])['G3'].mean().plot(kind='bar', ax=axes[0], color='#4CAF50')
+axes[0].set_title('1. Escolaridade dos pais vs G3')
+axes[0].set_xlabel('Medu/Fedu')
+axes[0].set_ylabel('Nota média')
+axes[0].grid(axis='y', linestyle='--', alpha=0.7)
 
-# 3. O apoio familiar (famsup) afeta positivamente o rendimento escolar?
-# infos que podem ajudar: famsup=5family educational support (binary: yes or no)
+# ------------------------------------------ 2 -----------------------------------------------------------
+axes[1].scatter(ds['studytime'], ds['G3'], alpha=0.6, color='#2196F3')
+axes[1].set_title('2. Tempo de estudo vs G3')
+axes[1].set_xlabel('Tempo de estudo (1–4)')
+axes[1].set_ylabel('Nota final (G3)')
+axes[1].grid(True, linestyle='--', alpha=0.7)
 
-# 4. O acesso à internet em casa está associado a melhores resultados escolares?
-# infos que podem ajudar:
+# ------------------------------------------ 3 -----------------------------------------------------------
+ds.groupby('famsup')['G3'].mean().plot(kind='bar', ax=axes[2], color=['#FFC107', '#03A9F4'])
+axes[2].set_title('3. Apoio familiar vs G3')
+axes[2].set_xlabel('famsup')
+axes[2].set_ylabel('Nota média')
+axes[2].grid(axis='y', linestyle='--', alpha=0.7)
 
-# 5. A distância entre casa e escola (traveltime) interfere no desempenho do aluno?
-# infos que podem ajudar:
+# ------------------------------------------ 4 -----------------------------------------------------------
+ds.groupby('internet')['G3'].mean().plot(kind='bar', ax=axes[3], color=['#9C27B0', '#00BCD4'])
+axes[3].set_title('4. Internet em casa vs G3')
+axes[3].set_xlabel('internet')
+axes[3].set_ylabel('Nota média')
+axes[3].grid(axis='y', linestyle='--', alpha=0.7)
 
-# ================================= 5 Perguntas secundarias =================================
-# 6. O tamanho da família (famsize) impacta o tempo dedicado aos estudos?
-# infos que podem ajudar: famsize=family size (binary: 'LE3' - less or equal to 3 or 'GT3' - greater than 3)
-print("\n6. O tamanho da família (famsize) impacta o tempo dedicado aos estudos?")
+# ------------------------------------------ 5 -----------------------------------------------------------
+axes[4].scatter(ds['traveltime'], ds['G3'], alpha=0.6, color='#E91E63')
+axes[4].set_title('5. Tempo de deslocamento vs G3')
+axes[4].set_xlabel('traveltime (1–4)')
+axes[4].set_ylabel('Nota final (G3)')
+axes[4].grid(True, linestyle='--', alpha=0.7)
 
+# ------------------------------------------ 6 -----------------------------------------------------------
 mediaFamsize = ds.groupby('famsize')['studytime'].mean()
-mediaFamsizeLE3 = mediaFamsize.loc['LE3']
-mediaFamsizeGT3 = mediaFamsize.loc['GT3']
+mediaFamsize.plot(kind='bar', ax=axes[5], color=['#4CAF50', '#2196F3'])
+axes[5].set_title('6. Tamanho da família vs tempo de estudo')
+axes[5].set_xlabel('famsize')
+axes[5].set_ylabel('Tempo de estudo médio')
+axes[5].grid(axis='y', linestyle='--', alpha=0.7)
 
-print("Médias do tempo de estudo por grupo: ")
-print("Média das Famílias pequenas: ",mediaFamsizeLE3)
-print("Média das Famílias grandes: ",mediaFamsizeGT3)
+# ------------------------------------------ 7 -----------------------------------------------------------
+mediaActivities = ds.groupby('activities')['G3'].mean()
+mediaActivities.plot(kind='bar', ax=axes[6], color=['#FFC107', '#03A9F4'])
+axes[6].set_title('7. Atividades extracurriculares vs G3')
+axes[6].set_xlabel('activities')
+axes[6].set_ylabel('Nota média')
+axes[6].grid(axis='y', linestyle='--', alpha=0.7)
 
-if mediaFamsizeLE3 > mediaFamsizeGT3:
-    print("\nConclusão: Alunos de famílias menores tendem a dedicar mais tempo aos estudos.")
-elif mediaFamsizeLE3 < mediaFamsizeGT3:
-    print("\nConclusão: Alunos de famílias maiores tendem a dedicar mais tempo aos estudos.")
-else:
-    print("\nConclusão: O tamanho da família não parece impactar o tempo dedicado aos estudos.")
+# ------------------------------------------ 8 -----------------------------------------------------------
+axes[7].scatter(ds['Dalc'], ds['G3'], alpha=0.6, color='#E91E63', label='Dalc')
+axes[7].scatter(ds['Walc'], ds['G3'], alpha=0.6, color='#9C27B0', label='Walc')
+axes[7].set_title('8. Consumo de álcool vs G3')
+axes[7].set_xlabel('Nível de consumo (1–5)')
+axes[7].set_ylabel('Nota final (G3)')
+axes[7].legend()
+axes[7].grid(True, linestyle='--', alpha=0.7)
 
-# 7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?
-# infos que podem ajudar: activities=extra-curricular activities (binary: yes or no)
-# Agrupar por 'activities' e calcular a média de G3
-print("\n7. Alunos que participam de atividades extracurriculares (activities) apresentam melhor desempenho escolar?")
-
-media_por_grupo = ds.groupby('activities')['G3'].mean()
-mediaYesActivities = media_por_grupo['yes']
-mediaNoActivities = media_por_grupo['no']
-
-print("Médias das notas finais (G3) por grupo: ")
-print("Média das que fizeram atividades: ",mediaYesActivities)
-print("Média das que não fizeram atividades: ",mediaNoActivities)
-
-if mediaYesActivities > mediaNoActivities:
-    print("Conclusão: Alunos que participam de atividades extracurriculares apresentam melhor desempenho escolar.")
-elif mediaYesActivities < mediaNoActivities:
-    print("Conclusão: Alunos que participam de atividades extracurriculares apresentam desempenho inferior.")
-else:
-    print("Conclusão: Não há diferença significativa no desempenho escolar entre os grupos.")
-
-# 8. Há uma correlação entre o consumo de álcool (Dalc, Walc) e as notas finais?
-# infos que podem ajudar: Dalc=workday alcohol consumption (numeric: from 1 - very low to 5 - very high)
-# Walc=weekend alcohol consumption (numeric: from 1 - very low to 5 - very high)
-
-# 9. O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?
-# infos que podem ajudar: pstatus=parent's cohabitation status (binary: 'T' - living together or 'A' - apart)
-print("\n9. O status de relacionamento dos pais (pstatus) influencia a motivação e desempenho dos estudantes?")
-
+# ------------------------------------------ 9 -----------------------------------------------------------
 mediaStatus = ds.groupby('Pstatus')[['studytime', 'G3']].mean()
-mediaStatusT = mediaStatus.loc['T']
-mediaStatusA = mediaStatus.loc['A']
+mediaStatus.plot(kind='bar', ax=axes[8], color=['#8BC34A', '#00BCD4'])
+axes[8].set_title('9. Status dos pais vs Estudo e G3')
+axes[8].set_xlabel('Pstatus (T/A)')
+axes[8].set_ylabel('Média')
+axes[8].grid(axis='y', linestyle='--', alpha=0.7)
 
-print("Médias da motivação de estudo(tempo de estudo) e notas finais: ")
-print("Média das que tem pais juntos: ")
-print("Média do tempo de estudo: ", mediaStatusT['studytime'])
-print("Média da nota final: ", mediaStatusT['G3'])
-print("Média das que não tem pais juntos: ")
-print("Média do tempo de estudo: ", mediaStatusA['studytime'])
-print("Média da nota final: ", mediaStatusA['G3'])
+# ------------------------------------------ 10 ----------------------------------------------------------
+ds.groupby('higher')['G3'].mean().plot(kind='bar', ax=axes[9], color=['#009688', '#CDDC39'])
+axes[9].set_title('10. Desejo de ensino superior vs G3')
+axes[9].set_xlabel('higher')
+axes[9].set_ylabel('Nota média')
+axes[9].grid(axis='y', linestyle='--', alpha=0.7)
 
-if mediaStatusT['studytime'] > mediaStatusA['studytime']:
-    print("\nConclusão da motivação: Alunos com pais vivendo juntos apresentam maior tempo de estudo (mais motivação).")
-elif mediaStatusT['studytime'] < mediaStatusA['studytime']:
-    print("\nConclusão da motivação: Alunos com pais separados apresentam maior tempo de estudo (mais motivação).")
-else:
-    print("\nConclusão da motivação: Não há diferença significativa no tempo de estudo entre os grupos.")
-
-if mediaStatusT['G3'] > mediaStatusA['G3']:
-    print("Conclusão do desempenho: Alunos com pais vivendo juntos apresentam melhor desempenho escolar (G3 maior).")
-elif mediaStatusT['G3'] < mediaStatusA['G3']:
-    print("Conclusão do desempenho: Alunos com pais separados apresentam melhor desempenho escolar (G3 maior).")
-else:
-    print("Conclusão do desempenho: Não há diferença significativa nas notas finais entre os grupos.")
-
-
-# 10. Alunos que desejam cursar o ensino superior (higher) obtêm notas mais altas por maior motivação?
-# infos que podem ajudar:
+plt.tight_layout()
+plt.show()
