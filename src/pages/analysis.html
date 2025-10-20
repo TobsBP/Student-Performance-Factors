@@ -25,136 +25,127 @@
             <a class="nav-link" href="./analysis.html">Analysis</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./team.html">Team</a>
+            <a class="nav-link" href="./abaut_me.html">Abaut Me</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="main-container d-flex justify-content-around flex-wrap my-5 text-center">
-    <div class="card shadow-sm" style="width: 18rem;">
-      <div class="card-body align-items-center">
-        <h5 class="card-title">Escolaridade dos Pais influenciam?</h5>
-        <div class="chart-container text-center">
-          <canvas id="chart1" width="200" height="200"></canvas>
+  <!-- Cards com gráficos -->
+  <div class="container my-5">
+    <div class="row justify-content-center g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Escolaridade dos Pais</h5>
+            <canvas id="chart1" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Pais com maior escolaridade tendem a ter filhos com notas mais altas.
+            </p>
+          </div>
         </div>
-        <p class="card-text">Como pode ser observado com os pais contendo maior nivel de escolaridade, os alunos tendem a ter notas maiores.</p>
       </div>
-    </div>
 
+      <!-- Card 2 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Horas estudadas</h5>
+              <canvas id="chart2" width="200" height="200"></canvas>            
+            <p class="card-text mt-3">
+              Baseado nas horas estudadas os alunos obtiveram as seguintes notas.
+            </p>
+            
+          </div>
+        </div>
+      </div>
 
-    <div class="chart-container text-center">
-      <canvas id="chart2" width="200" height="200"></canvas>
-    </div>
+      <!-- Card 3 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Apoio familiar importa?</h5>
+            <canvas id="chart3" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Variação de notas com e sem apoio familiar.
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <div class="chart-container text-center">
-      <canvas id="chart3" width="200" height="200"></canvas>
-    </div>
+      <!-- Card 4 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Internet é importante?</h5>
+            <canvas id="chart4" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Comparação entre grupos de alunos com e sem Internet.
+            </p>
+          </div>
+        </div>
+      </div>
 
-    <div class="chart-container text-center">
-      <canvas id="chart4" width="200" height="200"></canvas>
+      <!-- Card 5 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Tempo de deslocamento influência</h5>
+            <canvas id="chart5" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Tempo de deslocamento interfere nas notas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Desempenho com extra</h5>
+            <canvas id="chart6" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Alunos que fazem atividades extracurricular tendem a tirar notas mais altas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Consumo de álcool</h5>
+            <canvas id="chart7" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Alunos que consomem álcool durante os finais de semana tendem a tirar notas mais altas.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="col-md-5 col-lg-3">
+        <div class="card shadow-sm text-dark text-center">
+          <div class="card-body d-flex flex-column align-items-center">
+            <h5 class="card-title mb-3">Desejo do ensino superior</h5>
+            <canvas id="chart8" width="200" height="200"></canvas>
+            <p class="card-text mt-3">
+              Alunos que desejam fazer ensino superior tendem a tirar notas mais altas.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script>
-    const chart1 = new Chart(document.getElementById('chart1'), {
-      type: 'pie',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow'],
-        datasets: [{
-          label: 'Chart 1',
-          data: [10, 20, 30],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)'
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false
-      }
-    });
-
-    const chart2 = new Chart(document.getElementById('chart2'), {
-      type: 'pie',
-      data: {
-        labels: ['Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: 'Chart 2',
-          data: [5, 15, 8],
-          backgroundColor: [
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)'
-          ],
-          borderColor: [
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)'
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false
-      }
-    });
-  
-    const chart3 = new Chart(document.getElementById('chart3'), {
-      type: 'bar',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Dataset 1',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  
-    const chart4 = new Chart(document.getElementById('chart4'), {
-      type: 'bar',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-        datasets: [{
-          label: 'Dataset 1',
-          data: [65, 59, 80, 81, 56, 55, 40],
-          backgroundColor: 'rgba(75, 192, 192, 0.2)',
-          borderColor: 'rgba(75, 192, 192, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: false,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  
-  </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+  <script src="../js/chart.js"></script>
 </body>
 
 </html>
