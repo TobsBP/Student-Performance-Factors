@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Analysis</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="../index.html">SPF</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./analysis.html">Analysis</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./team.html">Team</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-container d-flex justify-content-around flex-wrap my-5 text-center">
+    <div class="card shadow-sm" style="width: 18rem;">
+      <div class="card-body align-items-center">
+        <h5 class="card-title">Escolaridade dos Pais influenciam?</h5>
+        <div class="chart-container text-center">
+          <canvas id="chart1" width="200" height="200"></canvas>
+        </div>
+        <p class="card-text">Como pode ser observado com os pais contendo maior nivel de escolaridade, os alunos tendem a ter notas maiores.</p>
+      </div>
+    </div>
+
+
+    <div class="chart-container text-center">
+      <canvas id="chart2" width="200" height="200"></canvas>
+    </div>
+
+    <div class="chart-container text-center">
+      <canvas id="chart3" width="200" height="200"></canvas>
+    </div>
+
+    <div class="chart-container text-center">
+      <canvas id="chart4" width="200" height="200"></canvas>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const chart1 = new Chart(document.getElementById('chart1'), {
+      type: 'pie',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow'],
+        datasets: [{
+          label: 'Chart 1',
+          data: [10, 20, 30],
+          backgroundColor: [
+            'rgba(255, 99, 132, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)'
+          ],
+          borderColor: [
+            'rgba(255, 99, 132, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false
+      }
+    });
+
+    const chart2 = new Chart(document.getElementById('chart2'), {
+      type: 'pie',
+      data: {
+        labels: ['Green', 'Purple', 'Orange'],
+        datasets: [{
+          label: 'Chart 2',
+          data: [5, 15, 8],
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false
+      }
+    });
+  
+    const chart3 = new Chart(document.getElementById('chart3'), {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+    const chart4 = new Chart(document.getElementById('chart4'), {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Dataset 1',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          backgroundColor: 'rgba(75, 192, 192, 0.2)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: false,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  
+  </script>
+
+</body>
+
+</html>
